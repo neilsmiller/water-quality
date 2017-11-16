@@ -2,7 +2,7 @@
 ## This is an R script to retrieve water quality data from both the USGS and EPA 
 ## for a specified geography, using the dataRetrieval package. Documentation and 
 ## vignettes for this package are on CRAN:
-## https://cran.r-project.org/web/packages/dataRetrieval/index.html.
+## https://cran.r-project.org/package=dataRetrieval.
 ##
 ## USGS and EPA water quality data are obtained from the Water Quality Portal
 ## at https://www.waterqualitydata.us.
