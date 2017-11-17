@@ -22,7 +22,7 @@ try(setwd(dir = "H:/ECHO Project/data/Environmental/Water"),
 #------------------------------------------------------------------------------#
 startDate <- Sys.Date() - (5 * 365)
 endDate <- Sys.Date()
-pullCharacteristics <- c(lead = "Lead", specifc.conductance = "Specific conductance")
+pullCharacteristics <- c(specifc.conductance = "specific conductance")
   # More research needed on which characteristcs are of interest, and are widely measured. 
   # ph = "pH", chloride = "Chloride" are possibilities. 
 
@@ -55,7 +55,7 @@ for (char in pullCharacteristics){
       # are the most relevant, I believe. Of the chosen columns, latitude and longitude
       # are numeric, and the rest are character strings.
   }
-    print(paste0("There are ", nrow(sites), " that measure ", char, " in your geography."))
+    print(paste0("There are ", nrow(sites), " sites that measure ", char, " in your geography."))
     write.csv(sites, file = paste0("sites-", char, ".csv"),
           row.names = FALSE)
 }
@@ -74,7 +74,7 @@ for (char in pullCharacteristics){
   print(paste0("...There are ", nrow(resultsFull), " measurements of ", char, " in ", county))
   results <- rbind(results, with(data = resultsFull, cbind.data.frame(OrganizationIdentifier, OrganizationFormalName, MonitoringLocationIdentifier,
                                                                       ActivityStartDate, ActivityEndDate, CharacteristicName, ResultMeasureValue,
-                                                                      ResultMeasure/MeasureUnitCode, ResultStatusIdentifier, PrecisionValue,
+                                                                      ResultMeasure.MeasureUnitCode, ResultStatusIdentifier, PrecisionValue,
                                                                       ResultCommentText)))
           }
   print(paste0("There are ", nrow(results), " measurements of ", char, " in your geography."))
